@@ -1,0 +1,16 @@
+.ProjectGoals {
+  padding: 50px 0;
+  text-align: center;
+}
+
+.ProjectGoals h3 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.ProjectGoals p {
+  font-size: 1.1em;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+}

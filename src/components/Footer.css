@@ -1,0 +1,26 @@
+.Footer {
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 20px 0;
+  text-align: center;
+}
+
+.Footer .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Footer p {
+  margin: 0;
+}
+
+.social-links a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+  font-size: 1.1em;
+}
+
+.social-links a:hover {
+  text-decoration: underline;
+}
