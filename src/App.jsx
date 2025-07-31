@@ -1,31 +1,24 @@
+import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
-import Hero from './components/Hero';
-import LabInfo from './components/LabInfo';
-import ProjectGoals from './components/ProjectGoals';
-import Chatbot from './components/Chatbot';
-import TechStack from './components/TechStack';
-import Footer from './components/Footer';
+import HomePage from './pages/HomePage';
+import ChatbotSidebar from './components/Chatbot';
 import './App.css';
 
 function App() {
   return (
     <BrowserRouter>
-      <div className="App">
+      <div className="app-container">
         <Header />
-        <Routes>
-          <Route path="/" element={
-            <>
-              <Hero />
-              <LabInfo />
-              <ProjectGoals />
-              <Chatbot />
-              <TechStack />
-            </>
-          } />
-          {/* Add routes for other pages if needed */}
-        </Routes>
-        <Footer />
+        <div className="main-layout">
+          <div className="main-content">
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              {/* Add routes for other pages here */}
+            </Routes>
+          </div>
+          <ChatbotSidebar />
+        </div>
       </div>
     </BrowserRouter>
   );

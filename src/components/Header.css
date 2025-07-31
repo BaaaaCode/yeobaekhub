@@ -1,36 +1,37 @@
-.Header {
-  background-color: rgba(255, 255, 255, 0.1);
-  padding: 10px 0;
-}
-
-.Header .container {
+.header {
+  background-color: var(--color-dark-green-3);
+  color: var(--color-white-text);
+  padding: 10px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.Header h1 {
-  margin: 0;
-  font-size: 1.5em;
+.header-left {
+    display: flex;
+    align-items: center;
 }
 
-.Header nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
+.header-logo {
+    height: 40px; /* Adjust size as needed */
+    margin-right: 10px;
 }
 
-.Header nav li {
-  margin-left: 20px;
+.header h1 {
+    margin: 0;
+    color: var(--color-white-text);
+    font-size: 1.5em;
 }
 
-.Header nav a {
-  color: white;
+.header-right a {
+  color: var(--color-white-text);
   text-decoration: none;
+  margin-left: 20px;
   font-size: 1.1em;
 }
 
-.Header nav a:hover {
-  text-decoration: underline;
+.header-right a.active {
+  background-color: var(--color-primary-green);
+  padding: 5px 10px;
+  border-radius: 5px;
 }
