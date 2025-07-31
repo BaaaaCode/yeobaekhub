@@ -66,8 +66,13 @@ function HomePage({ setIsChatbotVisible, isChatbotVisible }) {
       <div className="section main-project-section"> {/* Main Project section */}
         <h2>Main Project</h2>
         <div className="main-project-placeholder"> {/* Placeholder for content */}
-          <p>Work in progress will be displayed here.</p>
-          {/* You can add more complex placeholder structure here later */}
+          <h3>Work in Progress Updates:</h3>
+          <ul>
+            <li>Implementing core features...</li>
+            <li>Designing UI components...</li>
+            <li>Integrating APIs...</li>
+            <li>Setting up database...</li>
+          </ul>
         </div>
       </div>
     </div>

@@ -1,26 +1,48 @@
-.Footer {
-  background-color: rgba(0, 0, 0, 0.1);
-  padding: 20px 0;
-  text-align: center;
-}
-
-.Footer .container {
-  display: flex;
-  justify-content: space-between;
+.footer {
+  background-color: #222; /* Dark background color */
+  color: #ccc; /* Light text color */
+  padding: 20px; /* Adjusted padding */
+  font-size: 0.9em;
+  display: flex; /* Use flexbox to center content */
+  justify-content: center;
   align-items: center;
 }
 
-.Footer p {
-  margin: 0;
+/* Removed styles for footer-top, footer-middle, footer-bottom-left, address-copyright, university-logo, wa-mark */
+
+.footer-bottom {
+    /* This class is now the direct child of footer and contains the social links and TOP button */
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center;
+    flex-wrap: wrap; /* Allow wrapping */
+    gap: 20px; /* Space between social links and TOP button */
+}
+
+.social-links { /* Changed class name */
+    display: flex;
+    gap: 15px; /* Increased gap between links */
+    flex-wrap: wrap; /* Allow wrapping of social links */
+    justify-content: center; /* Center social links if they wrap */
 }
 
 .social-links a {
-  color: white;
-  text-decoration: none;
-  margin-left: 20px;
-  font-size: 1.1em;
+    color: #ccc; /* Light text color */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.2s ease; /* Add transition */
 }
 
 .social-links a:hover {
-  text-decoration: underline;
+    color: #fff; /* Lighter color on hover */
+}
+
+.top-button {
+    background-color: #555; /* Dark background for TOP button */
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em;
+    flex-shrink: 0; /* Prevent shrinking */
 }

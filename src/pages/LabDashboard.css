@@ -1,0 +1,93 @@
+.lab-dashboard-container {
+  display: flex; /* Use flexbox for the main layout */
+  min-height: 100vh;
+  background-color: var(--color-light-gray); /* Use a light background */
+  color: var(--color-black-text);
+}
+
+.dashboard-sidebar {
+  width: 200px; /* Fixed width for the sidebar */
+  background-color: var(--color-dark-green-3); /* Dark background for sidebar */
+  color: var(--color-white-text);
+  padding: 20px;
+  flex-shrink: 0; /* Prevent sidebar from shrinking */
+}
+
+.dashboard-sidebar h3 {
+    color: var(--color-white-text);
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.dashboard-sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.dashboard-sidebar li {
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.dashboard-sidebar li:hover {
+    color: var(--color-primary-green); /* Highlight on hover */
+}
+
+.dashboard-main-content {
+  flex-grow: 1; /* Allow main content to take up remaining space */
+  padding: 20px;
+  display: flex; /* Use flexbox for header and sections */
+  flex-direction: column;
+}
+
+.dashboard-header {
+  background-color: #fff; /* White background for header */
+  padding: 15px 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dashboard-header h2 {
+    color: var(--color-dark-green-3);
+    margin: 0;
+}
+
+.dashboard-sections {
+  display: grid; /* Use CSS Grid for the sections */
+  grid-template-columns: repeat(2, 1fr); /* Two columns */
+  grid-template-rows: auto; /* Rows will size automatically */
+  gap: 20px; /* Gap between sections */
+  grid-template-areas:
+    "input output"
+    "results results"
+    "vis1 vis2"; /* Define grid areas */
+}
+
+.dashboard-section {
+  background-color: #fff; /* White background for sections */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Assign grid areas to sections */
+.dashboard-section:nth-child(1) { grid-area: input; } /* Input Parameters */
+.dashboard-section:nth-child(2) { grid-area: output; } /* Output */
+.dashboard-section:nth-child(3) { grid-area: results; } /* Results Table */
+.dashboard-section:nth-child(4) { grid-area: vis1; }    /* Visualization 1 */
+.dashboard-section:nth-child(5) { grid-area: vis2; }    /* Visualization 2 */
+
+.placeholder-content {
+    border: 1px dashed var(--color-dark-green-2);
+    padding: 20px;
+    text-align: center;
+    color: var(--color-dark-green-2);
+}
+
+/* Remove the full-width-section class as we are using grid areas now */
+/* .full-width-section { grid-column: 1 / -1; } */

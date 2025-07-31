@@ -5,11 +5,19 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap; /* Allow wrapping */
 }
 
 .header-left {
     display: flex;
     align-items: center;
+}
+
+.header-left a {
+    text-decoration: none; /* Remove underline from the link */
+    color: inherit; /* Inherit color from parent */
+    display: flex; /* Use flexbox to align logo and text */
+    align-items: center; /* Vertically align logo and text */
 }
 
 .header-logo {
@@ -23,6 +31,20 @@
     font-size: 1.5em;
 }
 
+.full-title {
+    display: block; /* Show full title by default */
+}
+
+.short-title {
+    display: none; /* Hide shorter title by default */
+}
+
+.header-right {
+    display: flex; /* Use flexbox for navigation links */
+    align-items: center;
+    flex-wrap: wrap; /* Allow navigation links to wrap if needed */
+}
+
 .header-right a {
   color: var(--color-white-text);
   text-decoration: none;
@@ -34,4 +56,15 @@
   background-color: var(--color-primary-green);
   padding: 5px 10px;
   border-radius: 5px;
+}
+
+/* Media query to show shorter title and hide full title on small screens */
+@media (max-width: 600px) { /* Adjust breakpoint as needed */
+  .full-title {
+    display: none;
+  }
+
+  .short-title {
+    display: block;
+  }
 }
