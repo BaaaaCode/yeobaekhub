@@ -7,12 +7,25 @@
   color: var(--color-black-text);
 }
 
-.hero-section {
-  text-align: center;
-  margin-bottom: 40px;
+.hero-and-image-container {
+    display: flex; /* Use flexbox for two columns */
+    width: 100%;
+    max-width: 1000px; /* Adjust max-width as needed */
+    gap: 20px; /* Space between columns */
+    margin-bottom: 40px; /* Space below this container */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
 }
 
-.hero-section h1 {
+.hero-section-left {
+    flex: 2; /* Take up 2/3 of the available space */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    text-align: center; /* Center text within the column */
+}
+
+.hero-section-left h1 {
   color: var(--color-black-text);
   margin-bottom: 20px;
   font-size: 2.5em;
@@ -33,41 +46,132 @@
     background-color: #317160; /* Slightly darker green on hover */
 }
 
-.sections-container {
+.hero-image-right {
+    flex: 1; /* Take up 1/3 of the available space */
     display: flex;
-    gap: 20px;
+    justify-content: center; /* Center images horizontally */
+    align-items: center; /* Center images vertically */
+    /* Add any specific styling for the image container */
+}
+
+.hero-image-right img {
+    max-width: 100%; /* Ensure images are responsive */
+    height: auto; /* Maintain aspect ratio */
+    /* Add any specific styling for images */
+}
+
+.separator {
+    width: 80%; /* Adjust width as needed */
+    height: 1px; /* Thickness of the line */
+    background-color: var(--color-dark-green-2); /* Color of the line */
+    margin: 40px auto; /* Add margin above and below and center the line */
+}
+
+.lab-info-header {
+    text-align: center;
+    margin-bottom: 20px; /* Space below the header */
+}
+
+.lab-info-header h2 {
+    color: var(--color-dark-green-3);
+    margin-bottom: 5px; /* Space between title and phrase */
+    font-size: 2em;
+}
+
+.lab-info-header p {
+    color: var(--color-black-text);
+    margin: 0;
+    font-size: 1em;
+}
+
+.labs-sections-container {
+    display: flex; /* Arrange lab boxes horizontally */
+    gap: 20px; /* Space between lab boxes */
     margin-bottom: 20px;
     width: 100%;
     max-width: 1000px; /* Adjust max-width as needed */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    justify-content: center; /* Center the boxes if they don't fill the width */
 }
 
 .section {
-    flex: 1;
+    flex: 1; /* Allow boxes to grow and shrink */
+    min-width: 250px; /* Minimum width for each box */
     background-color: #fff;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex; /* Use flexbox for content inside the section */
+    flex-direction: column; /* Stack content vertically */
+    text-decoration: none; /* Remove underline from link */
+    color: var(--color-black-text); /* Ensure text color is readable */
+    transition: transform 0.2s ease-in-out; /* Add a subtle hover effect */
 }
 
-.section h2 {
+.section:hover {
+    transform: translateY(-5px); /* Lift the box slightly on hover */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+}
+
+.lab-section-link {
+    flex: 1; /* Allow links to grow and shrink like sections */
+    min-width: 250px; /* Minimum width for each link */
+    text-decoration: none; /* Remove underline from link */
+    color: var(--color-black-text); /* Ensure text color is readable */
+    transition: transform 0.2s ease-in-out; /* Add a subtle hover effect */
+    background-color: #fff; /* Set background color */
+    padding: 20px;
+    border-radius: 8px; /* Add border radius */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add box shadow */
+    display: flex; /* Use flexbox for content inside the link */
+    flex-direction: column;
+}
+
+.lab-section-link:hover {
+    transform: translateY(-5px); /* Lift the box slightly on hover */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+}
+
+.lab-section-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Ensure content fills the link box */
+}
+
+.lab-section-link h4 {
+    color: var(--color-dark-green-2);
+    margin: 0 0 10px 0;
+    font-size: 1.1em;
+}
+
+.lab-section-link p {
+    margin: 0;
+    line-height: 1.5;
+    color: var(--color-black-text);
+    word-break: break-word;
+}
+
+.main-project-section {
+    width: 100%; /* Allow the section to take full width */
+    max-width: 1000px; /* Match max-width of other containers */
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px; /* Space below the section */
+}
+
+.main-project-section h2 {
     color: var(--color-dark-green-3);
     margin-top: 0;
     margin-bottom: 15px;
     font-size: 1.5em;
 }
 
-.section p {
-    margin-bottom: 10px;
-    line-height: 1.6;
-}
-
-.you-meet-section .icons {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 20px;
-}
-
-.you-meet-section .icons img {
-    width: 50px; /* Adjust icon size as needed */
-    height: 50px;
+.main-project-placeholder {
+    /* Add any specific styling for the placeholder area */
+    border: 1px dashed var(--color-dark-green-2); /* Example placeholder border */
+    padding: 20px; /* Example placeholder padding */
+    text-align: center; /* Center placeholder text */
+    color: var(--color-dark-green-2); /* Color for placeholder text */
 }

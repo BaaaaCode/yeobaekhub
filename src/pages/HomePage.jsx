@@ -1,45 +1,75 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './HomePage.css';
 
-function HomePage() {
+function HomePage({ setIsChatbotVisible, isChatbotVisible }) {
+  const handleStartAssistantClick = () => {
+    setIsChatbotVisible(!isChatbotVisible); // Toggle chatbot visibility
+  };
+
+  const labsData = [
+    {
+      title: 'Automatation Lab',
+      subtitle: 'LAB 1',
+      description: '#AIAssistant #Automation #Chatbot #GeminiAPI',
+      link: '/labs/automation'
+    },
+    {
+      title: 'Archive Lab',
+      subtitle: 'LAB 2',
+      description: '#DocumentManagement #AcademicResources #Search #Collaboration',
+      link: '/labs/archive'
+    },
+    {
+      title: 'AICurator Lab',
+      subtitle: 'Lab 3',
+      description: '#RecommendationSystem #LibraryScience #Personalization #LearningSupport',
+      link: '/labs/aicurator'
+    },
+    {
+        title: 'Idea Lab',
+        subtitle: 'LAB 6',
+        description: '# Idea # Experiment',
+        link: '/labs/idea' // Add link for the new lab
+    }
+  ];
+
   return (
     <div className="homepage">
-      <div className="hero-section">
-        <h1>AI-based Automation Assistant</h1>
-        <button className="start-button">Start Assistant</button>
-      </div>
-      <div className="sections-container">
-        <div className="section mcp-section">
-          <h2>MCP</h2>
-          <p>Modular Command Processing</p>
-          <p>Prompt Engineering</p>
-          <p>Intent Parsing</p>
-          <p>LLM API Integration</p>
+      <div className="hero-and-image-container"> {/* Two-column container */}
+        <div className="hero-section-left"> {/* Left column for text and button */}
+          <h1>between 0 and 1, fill the 'blanket' of knowledge!</h1> {/* Updated title */}
+          <button className="start-button" onClick={handleStartAssistantClick}>Start Assistant</button>
         </div>
-        <div className="section project-goals-section">
-          <h2>Project Goals</h2>
-          <p>MVP: [ technologies ]</p>
-          <p>Core: [ core integrates ]</p>
-          <p>Final Product: [ Final Product Visions ]</p>
+        <div className="hero-image-right"> {/* Right column for images */}
+          {/* Add your image elements here */}
+          <img src="/placeholder-image-1.svg" alt="Placeholder Image 1" />
+          {/* Add more images as needed */}
         </div>
       </div>
-       <div className="sections-container">
-         <div className="section you-meet-section">
-            <h2>You Meet</h2>
-            {/* Add icons or images here */}
-            <div className="icons">
-                <img src="/placeholder-icon.svg" alt="Icon 1" />
-                <img src="/placeholder-icon.svg" alt="Icon 2" />
-                <img src="/placeholder-icon.svg" alt="Icon 3" />
-                <img src="/placeholder-icon.svg" alt="Icon 4" />
+      <div className="separator"></div> {/* Add separator */}
+      <div className="lab-info-header"> {/* Container for Lab Info title and phrase */}
+        <h2>Lab Info</h2>
+        <p>Lab Info</p>
+      </div>
+      <div className="labs-sections-container"> {/* New container for lab boxes */}
+        {labsData.map((lab, index) => (
+          <Link to={lab.link} key={index} className="section lab-section-link"> {/* Wrap content in Link */}
+            <div className="lab-section-content"> {/* Add a div for content to apply flex styles */}
+              <h4>{lab.subtitle}: {lab.title}</h4>
+              <p>{lab.description}</p>
             </div>
-         </div>
-         <div className="section tech-stack-section">
-            <h2>Tech Stack</h2>
-            <p>Python, Groovy, Firebase</p>
-            <p>Gemini</p>
-         </div>
-       </div>
+          </Link>
+        ))}
+      </div>
+      <div className="separator"></div> {/* Add second separator */}
+      <div className="section main-project-section"> {/* Main Project section */}
+        <h2>Main Project</h2>
+        <div className="main-project-placeholder"> {/* Placeholder for content */}
+          <p>Work in progress will be displayed here.</p>
+          {/* You can add more complex placeholder structure here later */}
+        </div>
+      </div>
     </div>
   );
 }

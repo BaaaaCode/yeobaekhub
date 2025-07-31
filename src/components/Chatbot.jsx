@@ -1,12 +1,16 @@
 import React from 'react';
 import './Chatbot.css';
 
-function ChatbotSidebar() {
+function ChatbotSidebar({ setIsChatbotVisible }) {
+  const handleCloseClick = () => {
+    setIsChatbotVisible(false);
+  };
+
   return (
     <div className="chatbot-sidebar">
       <div className="chatbot-header">
-        <h3>Chatbot</h3>
-        {/* Add chatbot icon here if needed */}
+        <h3>Chatbot</h3> {/* Change title text back to Chatbot */}
+        <button className="close-button" onClick={handleCloseClick}>X</button>
       </div>
       <div className="chatbot-messages">
         <p>Hello, Seungbin</p>

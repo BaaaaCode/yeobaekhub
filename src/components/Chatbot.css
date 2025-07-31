@@ -1,34 +1,66 @@
 .chatbot-sidebar {
   width: 350px; /* Increased width */
-  background-color: var(--color-dark-green-1);
-  color: var(--color-white-text);
-  padding: 20px;
+  background-color: var(--color-dark-green-1); /* Reverted background color */
+  color: var(--color-white-text); /* Reverted text color */
+  padding: 20px; /* Reverted padding */
   box-sizing: border-box;
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
-  gap: 20px; /* Added gap for spacing between sections */
+  gap: 20px; /* Reverted gap */
+  position: relative;
 }
 
 .chatbot-header {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: space-between; /* Distribute space between title and button */
+    align-items: center; /* Vertically align items */
+    margin-bottom: 15px; /* Reverted margin below the header */
+    padding-bottom: 0; /* Removed padding at the bottom */
+    border-bottom: none; /* Removed bottom border */
 }
 
 .chatbot-header h3 {
-  color: var(--color-white-text);
+  color: var(--color-white-text); /* Reverted text color */
   margin: 0;
+  font-size: 1.4em; /* Reverted font size */
+  font-weight: normal; /* Reverted font weight */
+}
+
+.close-button {
+    background-color: var(--color-dark-green-3); /* Dark green background for the button */
+    border: none; /* Remove border */
+    color: var(--color-white-text); /* White text color */
+    font-size: 0.7em; /* Further reduced font size */
+    cursor: pointer;
+    padding: 2px 4px; /* Further reduced padding */
+    border-radius: 3px; /* Adjusted border radius */
+    margin-left: auto; /* Push the close button to the right */
+    transition: background-color 0.3s ease; /* Add transition */
+    display: flex; /* Use flexbox to center the 'X' */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    line-height: 1; /* Ensure consistent line height */
+}
+
+.close-button:hover {
+    background-color: var(--color-dark-green-2); /* Darken background on hover */
 }
 
 .chatbot-messages {
     flex-grow: 1; /* Allows messages to take up available space */
     overflow-y: auto; /* Add scroll for long conversations */
+    margin-bottom: 15px; /* Add margin below messages */
+    color: var(--color-white-text); /* Reverted text color for messages */
 }
 
 .chatbot-messages p {
     margin-bottom: 10px;
     line-height: 1.4;
+}
+
+.chatbot-suggestions {
+    margin-bottom: 15px; /* Add margin below suggestions */
 }
 
 .chatbot-suggestions button {
@@ -52,6 +84,7 @@
   display: flex;
   align-items: center;
   gap: 10px; /* Added gap between input and button */
+  margin-bottom: 15px; /* Add margin below input area */
 }
 
 .chatbot-input-area input[type="text"] {
@@ -61,6 +94,8 @@
   border: none;
   box-sizing: border-box;
   font-size: 1em;
+  background-color: #ffffff; /* White input background */
+  color: var(--color-black-text); /* Black text color */
 }
 
 .chatbot-input-area button {
@@ -69,7 +104,8 @@
     padding: 10px;
     margin: 0;
     flex-shrink: 0;
-    background-color: var(--color-primary-green); /* Use primary green for send button */
+    background-color: var(--color-primary-green); /* Reverted send button background */
+    color: var(--color-white-text); /* Reverted text color */
     transition: background-color 0.3s ease;
 }
 
@@ -79,6 +115,7 @@
 
 .chatbot-footer {
     text-align: center;
+    color: var(--color-white-text); /* Reverted footer text color */
 }
 
 .chatbot-footer p {
