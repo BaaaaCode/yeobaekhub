@@ -10,6 +10,14 @@ A modern, responsive website for Yeobaek HUB showcasing an AI-based Automation A
 
 ### Plan for Current Change
 
+### Aesthetic Inspiration
+
+Drawing inspiration from the provided URLs:
+- **Yaskawa Korea:** For a professional and organized layout with clear navigation.
+- **SNUAILAB:** For informative presentation of lab details and project goals.
+- **Theragen Health:** For an approachable and trustworthy feel.
+
+
 1.  Modify `src/App.jsx` to include the main sections of the website.
 2.  Create and implement a `Header` component for the navigation bar.
 3.  Create and implement a `Hero` component for the hero section.
